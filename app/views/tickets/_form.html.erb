@@ -1,0 +1,46 @@
+<%= form_for(@ticket) do |f| %>
+  <% if @ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+      <ul>
+      <% @ticket.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :las_answer_at %><br>
+    <%= f.datetime_select :las_answer_at %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_id %><br>
+    <%= f.select :customer_id, options_for_select(User.all.map {|u| [u.name,u.id]},:customer_id) %>
+  </div>
+  <div class="field">
+    <%= f.label :assignee_id %><br>
+    <%= f.select :assignee_id, options_for_select(User.all.map {|u| [u.name,u.id]},:assignee_id) %>
+  </div>
+  <div class="field">
+    <%= f.label :department_id %><br>
+    <%= f.select :department_id, options_for_select(Department.all.map {|d| [u.name,u.id]},:department_id) %>
+    <%#= f.number_field :department_id %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.number_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

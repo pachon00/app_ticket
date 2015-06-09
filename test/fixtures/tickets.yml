@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  las_answer_at: 2015-06-06 16:26:03
+  customer_id: 1
+  assignee_id: 1
+  department_id: 1
+  status: 1
+
+two:
+  title: MyString
+  description: MyString
+  las_answer_at: 2015-06-06 16:26:03
+  customer_id: 1
+  assignee_id: 1
+  department_id: 1
+  status: 1
